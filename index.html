@@ -28,7 +28,7 @@
     <section id="quem-somos" class="pt-24 pb-12 bg-gray-100 min-h-screen flex items-center">
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 space-y-4">
-            <h2 class="text-2xl font-bold">Quem somos nós</h2>
+            <h3 class="text-2xl font-bold">Quem somos nós</h3>
             <p class="text-lg">
                 Somos os irmãos <strong>Jeferson</strong> e <strong>Anderson</strong>, profissionais com anos de experiência no setor de construção civil e manutenção. 
                 Atuamos com dedicação e excelência em serviços de pintura, reformas, pisos e manutenção em geral, garantindo qualidade e satisfação aos nossos clientes.
@@ -39,78 +39,107 @@
             </div>
         </div>
     </section>
-  <!-- Seção Serviços -->
+    <!-- Seção Serviços -->
     <section id="servicos" class="py-12 bg-white min-h-screen flex flex-col justify-center">
         <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-center mb-10">Serviços</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="p-4 border rounded shadow">
-            <h3 class="text-xl font-semibold mb-2">Pinturas</h3>
-            <p>Pintura de paredes, tetos e fachadas com acabamento profissional e materiais de qualidade.</p>
-            </div>
-            <div class="p-4 border rounded shadow">
-            <h3 class="text-xl font-semibold mb-2">Pisos e Revestimentos</h3>
-            <p>Instalação e reparos de pisos cerâmicos, porcelanatos e outros revestimentos.</p>
-            </div>
-            <div class="p-4 border rounded shadow">
-            <h3 class="text-xl font-semibold mb-2">Outros Serviços</h3>
-            <p>Manutenção predial em geral conforme a necessidade do cliente, com agilidade e confiança.</p>
+            <h2 class="text-2xl font-bold text-center mb-10">Serviços</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 border rounded shadow text-center">
+                    <img src="img/pincel.png" alt="Ícone Pintura" class="mx-auto w-20 h-20 rounded-full mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Pinturas</h3>
+                    <p>Pintura de paredes, tetos e fachadas com acabamento profissional e materiais de qualidade.</p>
+                </div>
+                <div class="p-4 border rounded shadow text-center">
+                    <img src="img/pisos.png" alt="Ícone Pisos" class="mx-auto w-20 h-20 rounded-full mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Pisos e Revestimentos</h3>
+                    <p>Instalação e reparos de pisos cerâmicos, porcelanatos e outros revestimentos.</p>
+                </div>
+                <div class="p-4 border rounded shadow text-center">
+                    <img src="img/manutencao.png" alt="Ícone Manutenção" class="mx-auto w-20 h-20 rounded-full mb-2">
+                    <h3 class="text-xl font-semibold mb-2">Outros Serviços</h3>
+                    <p>Manutenção predial em geral conforme a necessidade do cliente, com agilidade e confiança.</p>
+                </div>
             </div>
         </div>
+        <!-- Carrossel -->
+        <h4 class="text-lg font-semibold mt-12 mb-4 text-center">Imagens de alguns de nossos serviços</h4>
+        <div class="relative w-full overflow-hidden">
+            <div id="carousel-pinturas" class="flex transition-transform duration-500">
+                <img src="img/cerca_pintura.jpg" onclick="openImageModal(this.src)" class="w-full md:w-1/3 object-cover h-64 cursor-pointer" />
+                <img src="img/escada_pintura.jpg" onclick="openImageModal(this.src)" class="w-full md:w-1/3 object-cover h-64 cursor-pointer" />
+                <img src="img/serviço_piso.jpg" onclick="openImageModal(this.src)" class="w-full md:w-1/3 object-cover h-64 cursor-pointer" />
+            </div>
+            <button onclick="moveCarousel('carousel-pinturas', -1)"
+                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-1 rounded-full shadow hover:bg-gray-200">❮</button>
 
-        <!-- Carrossel de imagens -->
-        <div class="mt-12 space-y-6">
-            <div>
-            <h4 class="text-lg font-semibold mb-2">Imagens de Pintura</h4>
-            <div class="flex space-x-4 overflow-x-auto">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-            </div>
-            </div>
-            <div>
-            <h4 class="text-lg font-semibold mb-2">Imagens de Pisos e Revestimentos</h4>
-            <div class="flex space-x-4 overflow-x-auto">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-            </div>
-            </div>
-            <div>
-            <h4 class="text-lg font-semibold mb-2">Imagens de Outros Serviços</h4>
-            <div class="flex space-x-4 overflow-x-auto">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-                <img src="https://via.placeholder.com/300" class="w-72 h-48 object-cover rounded">
-            </div>
-            </div>
-        </div>
+            <button onclick="moveCarousel('carousel-pinturas', 1)"
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white text-gray-800 px-3 py-1 rounded-full shadow hover:bg-gray-200">❯</button>
         </div>
     </section>
+    <!-- Modal de visualização de imagem -->
+    <div id="imageModal" onclick="closeImageModal()" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+        <div class="relative max-w-3xl max-h-[90vh] w-full px-4">
+            <button onclick="closeImageModal()" class="absolute top-2 right-2 text-white text-3xl font-bold z-10">&times;</button>
+            <img id="modalImage" src="" alt="Imagem ampliada" onclick="event.stopPropagation()" class="w-full h-auto rounded shadow-lg" />
+        </div>
+    </div>
     <!-- Seção Contato -->
-    <section id="contato" class="py-12 bg-gray-100">
-        <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-center mb-10">Contato</h2>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-            <a href="https://wa.me/5599999999999" target="_blank" class="block p-6 bg-white rounded shadow hover:bg-green-50">
-            <h3 class="text-lg font-semibold">WhatsApp</h3>
-            <p>Clique aqui para falar conosco pelo WhatsApp.</p>
-            </a>
-            <a href="mailto:email@exemplo.com" class="block p-6 bg-white rounded shadow hover:bg-blue-50">
-            <h3 class="text-lg font-semibold">Email</h3>
-            <p>Envie um email para nossa equipe.</p>
-            </a>
-            <a href="https://instagram.com/seuperfil" target="_blank" class="block p-6 bg-white rounded shadow hover:bg-pink-50">
-            <h3 class="text-lg font-semibold">Instagram</h3>
-            <p>Acompanhe nossos trabalhos pelo Instagram.</p>
-            </a>
-        </div>
-        </div>
+    <section id="contato" class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="text-center p-8 bg-white rounded shadow-md">
+        <!-- Ícone do WhatsApp -->
+        <img src="img/WhatsApp.svg"
+            alt="WhatsApp"
+            width="72"
+            height="72"
+            class="mx-auto mb-4" style="aspect-ratio: 1 / 1;">
+
+        <!-- Título -->
+        <h2 class="text-2xl font-bold mb-2">WhatsApp</h2>
+
+        <!-- Texto explicativo -->
+        <p class="mb-6 text-gray-700">Clique abaixo para iniciar uma conversa com nossa equipe pelo WhatsApp.</p>
+
+        <!-- Botão -->
+        <a href="https://wa.me/5551992635094?text=Ol%C3%A1,%20gostaria%20de%20realizar%20um%20or%C3%A7amento..."
+            target="_blank" class="inline-block px-6 py-3 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-700 transition">
+            Iniciar conversa
+        </a>
+    </div>
     </section>
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-6">
         <p>Contato: (51) 99263-5094 | Porto Alegre/Gravataí/Viamão - RS</p>
         <p>&copy; 2025 Jeferson & Anderson - Todos os direitos reservados.</p>
     </footer>
+    <script>
+        const carousels = {
+            'carousel-pinturas': 0,
+        };
+
+        function moveCarousel(id, direction) {
+            const el = document.getElementById(id);
+            const totalSlides = el.children.length;
+            carousels[id] = (carousels[id] + direction + totalSlides) % totalSlides;
+            el.style.transform = `translateX(-${carousels[id] * 100}%)`;
+        }
+
+        // Auto play
+        setInterval(() => {
+            moveCarousel('carousel-pinturas', 1);
+        }, 4000);
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = src;
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+    </script>
 </body>
 </html>
