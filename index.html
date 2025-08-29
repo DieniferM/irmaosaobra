@@ -121,6 +121,12 @@
         <p>&copy; 2025 Jeferson & Anderson - Todos os direitos reservados.</p>
     </footer>
     <script>
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+
+        toggle.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
         const carousels = {
             'carousel-pinturas': 0,
         };
